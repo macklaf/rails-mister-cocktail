@@ -2,3 +2,18 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "banner";
+@import "card";
+
+li {
+ list-style-type: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+
+}
+
+h1, h2 {
+  font-family: pacifico;
+}

@@ -1,10 +1,44 @@
-<div class="container">
-  <h1>Cocktails</h1>
-
-  <ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></li>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <i class="fas fa-cocktail"></i>
   <% end %>
-  </ul>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://images.unsplash.com/photo-1539020726645-cd4f3ed76142?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1517620114540-4f6a4c43f8ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);">
+  <div class="container">
+    <h1> <strong>BestCocktails</strong> Brings Bartender skills to creative people!</h1>
+    <p class = "mt-2">Change your nights and learn the best cocktails with the best bartenders.</p>
+  </div>
+</div>
+
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+  <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1972&q=80)">
+  <%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %>
+</div>
+  <% end %>
 <%= link_to "add a new cocktail", new_cocktail_path, :class => "btn btn-primary" %>
 </div>
