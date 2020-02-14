@@ -16,7 +16,6 @@ require 'faker'
 
 puts "clean ingredient table ...."
 puts "......"
-Ingredient.destroy_all
 
   ingredients['drinks'].each do |ingredient|
     Ingredient.create(name: ingredient['strIngredient1'])
